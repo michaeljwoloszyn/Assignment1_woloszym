@@ -24,8 +24,8 @@ public class outputController {
         if(bindingResult.hasErrors()){
             return "Input";
         }
-
         model.addAttribute("user", user);
+
         return "Output";
     }
 }

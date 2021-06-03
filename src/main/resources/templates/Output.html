@@ -5,6 +5,17 @@
     <title>Output</title>
 </head>
 <body>
-<h1>Output</h1>
+    <h1>Output</h1>
+    <p>
+        Your choice was:<span th:action="${user.setChoiceString()}" th:text="${user.getChoiceString()}"></span>
+    </p>
+    <p>
+        The computers choice was:<span th:action="${user.setRandom()}" th:text="${user.getCompChoice()}"></span>
+    </p>
+    <p>
+        <span th:action="${user.setWin()}" th:text="${user.getWin()}"></span>
+    </p>
+    <a href="Input.html" th:href="@{Input}">Play again</a>
+    <span></span>
 </body>
 </html>

@@ -2,7 +2,7 @@ package sheridan.assignment1_woloszym.domain;
 
 public class User implements java.io.Serializable {
 
-    private String CompChoice = "";
+    private String compChoice = "";
     private String choiceString = "";
     private String win = "";
     private double random;
@@ -15,15 +15,21 @@ public class User implements java.io.Serializable {
         return choice;
     }
 
-    public void setChoice(double choice) {
-        this.choice = choice;
-    }
-
-    public void setRandom(int random) {
+    public void setRandom() {
         this.random = Math.floor(Math.random() * 3) + 1;
+        if(this.random==1)
+            this.compChoice= "Rock";
+        if(this.random==2)
+            this.compChoice= "Paper";
+        if(this.random==3)
+            this.compChoice= "Scissors";
     }
 
-    public void setChoiceString(String choiceString) {
+    public String getChoiceString() {
+        return choiceString;
+    }
+
+    public void setChoiceString() {
         if(this.choice==1)
             this.choiceString="Rock";
         if(this.choice==2)
@@ -32,32 +38,22 @@ public class User implements java.io.Serializable {
             this.choiceString="Scissors";
     }
 
-    public String getChoiceString() {
-        return choiceString;
-    }
-
 
     public String getCompChoice() {
-        if(this.random==1)
-            return "Rock";
-        if(this.random==2)
-            return "Paper";
-        if(this.random==3)
-            return "Scissors";
-        return null;
+        return this.compChoice;
     }
+
 
     public String getWin() {
-        if(this.choice==this.random)
-            return "Tie";
-        if(this.choice==1 && this.random==3 || this.choice==2 && this.random==1 || this.choice==3 && this.random==2)
-            return "Win";
-        if(this.choice==1 && this.random==2 || this.choice==2 && this.random==3 || this.choice==3 && this.random==1)
-            return "Lose";
-        return null;
+        return this.win;
     }
 
-    public void setWin(String win) {
-        this.win = win;
+    public void setWin() {
+        if(this.choice==this.random)
+            this.win= "It was a tie";
+        if(this.choice==1 && this.random==3 || this.choice==2 && this.random==1 || this.choice==3 && this.random==2)
+            this.win= "You win";
+        if(this.choice==1 && this.random==2 || this.choice==2 && this.random==3 || this.choice==3 && this.random==1)
+            this.win= "You lose";
     }
 }

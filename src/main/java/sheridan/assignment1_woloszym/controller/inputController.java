@@ -11,6 +11,8 @@ public class inputController {
     public String input(Model model){
         User user = new User();
         model.addAttribute("user", user);
+
         return "Input";
     }
+
 }
