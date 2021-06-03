@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Input</title>
 </head>
 <body>
-
+<h1>Input</h1>
+<h3>Please enter your choice:</h3>
+<form action="Output.html" th:action="@{Output}" th:object="${user}">
+    <div th:if="${#fields.hasErrors('*')}">
+        <h3 class="error">Input Errors</h3>
+        <ul>
+            <li class="error" th:each="e: ${#fields.errors('*')}" th:text="${e}">Input Error</li>
+        </ul>
+    </div>
+    <div>
+        <label>
+            Rock
+            <input type="radio" id="r" name="choice" th:field="*{choice}" value="1" required> <br>
+        </label>
+        <label>
+            Paper
+            <input type="radio" id="p" name="choice" th:field="*{choice}" value="2" required><br>
+        </label>
+        <label>
+            Scissors
+            <input type="radio" id="s" name="choice" th:field="*{choice}" value="3" required><br><br>
+        </label>
+    </div>
+    <div>
+        <input type="submit" value="Play">
+    </div>
+</form>
 </body>
 </html>
