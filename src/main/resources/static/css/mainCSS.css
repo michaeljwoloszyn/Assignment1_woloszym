@@ -1,0 +1,32 @@
+body {
+    background-color: lightblue;
+}
+
+h1{
+    color: black;
+    font-size: xxx-large;
+    font-weight: bolder;
+}
+
+span{
+    font-weight: bolder;
+    color: orange;
+}
+
+p{
+    font-size: larger;
+}
+#r{
+    color: gray;
+    font-size: larger;
+}
+
+#p{
+    color: white;
+    font-size: larger;
+}
+
+#s{
+    color: red;
+    font-size: larger;
+}

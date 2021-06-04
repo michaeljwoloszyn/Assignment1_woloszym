@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/mainCSS.css" th:href="@{css/mainCSS.css}">
     <title>Input</title>
 </head>
 <body>
@@ -15,17 +16,14 @@
         </ul>
     </div>
     <div>
-        <label>
-            Rock
-            <input type="radio" id="r" name="choice" th:field="*{choice}" value="1" required> <br>
+        <label id="r">
+        <input type="radio" name="choice" th:field="*{choice}" value="1" required> Rock <br>
         </label>
-        <label>
-            Paper
-            <input type="radio" id="p" name="choice" th:field="*{choice}" value="2" required><br>
+        <label id="s">
+        <input type="radio" name="choice" th:field="*{choice}" value="3" required> Scissors <br>
         </label>
-        <label>
-            Scissors
-            <input type="radio" id="s" name="choice" th:field="*{choice}" value="3" required><br><br>
+        <label id="p">
+        <input type="radio" name="choice" th:field="*{choice}" value="2" required> Paper <br><br>
         </label>
     </div>
     <div>

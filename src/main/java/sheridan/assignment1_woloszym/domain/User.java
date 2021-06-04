@@ -11,6 +11,10 @@ public class User implements java.io.Serializable {
     public User() {
     }
 
+    public void setChoice(double choice) {
+        this.choice = choice;
+    }
+
     public double getChoice() {
         return choice;
     }
